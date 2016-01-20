@@ -1,7 +1,7 @@
 # Last Modified: Thu Jan 21 00:17:04 2016
 #include <tunables/global>
 
-/usr/bin/lftp flags=(complain) {
+/usr/bin/lftp {
   #include <abstractions/apache2-common>
   #include <abstractions/base>
 
@@ -9,11 +9,15 @@
 
   /etc/inputrc r,
   /etc/lftp.conf r,
-  /home/*/ r,
-  /home/*/.lftp/cwd_history rwk,
-  /home/*/.lftp/rl_history rw,
-  /home/*/.lftp/transfer_log w,
-  /home/*/config.php w,
+
+
+  owner /home/*/.local/share/lftp/* rw,
+  owner /home/*/[^.]*/[^.]* rw,
+  owner /home/*/[^.]* rw,
+
+  deny /home/*/.ssh/ mrwkl,
+  deny /home/*/.ssh/* mrwkl,
+
   /usr/bin/lftp mr,
 
 }
