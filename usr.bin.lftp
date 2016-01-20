@@ -1,9 +1,19 @@
-# Last Modified: Wed Jan 20 23:39:30 2016
+# Last Modified: Thu Jan 21 00:17:04 2016
 #include <tunables/global>
 
 /usr/bin/lftp flags=(complain) {
+  #include <abstractions/apache2-common>
   #include <abstractions/base>
 
+
+
+  /etc/inputrc r,
+  /etc/lftp.conf r,
+  /home/*/ r,
+  /home/*/.lftp/cwd_history rwk,
+  /home/*/.lftp/rl_history rw,
+  /home/*/.lftp/transfer_log w,
+  /home/*/config.php w,
   /usr/bin/lftp mr,
 
 }
