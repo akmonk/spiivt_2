@@ -25,10 +25,4 @@ apparmor_parser -r /etc/apparmor.d/usr.bin.lftp
 
 sudo aa-enforce /usr/bin/lftp
 
-6. После этого попробовать подключиться к ftp и загрузить какой-нибдь файл + попробовать загрузить id_rsa.pub
-
-
-
-get .ssh/id_rsa.pub
-get: /home/ak/id_rsa.pub: Permission denied
-
+6. После этого попробовать подключиться к ftp и загрузить какой-нибдь файл + попробовать загрузить, например, id_rsa.pub
