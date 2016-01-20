@@ -1,0 +1,9 @@
+# Last Modified: Wed Jan 20 23:39:30 2016
+#include <tunables/global>
+
+/usr/bin/lftp flags=(complain) {
+  #include <abstractions/base>
+
+  /usr/bin/lftp mr,
+
+}
