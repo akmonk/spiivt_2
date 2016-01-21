@@ -2,7 +2,7 @@
 #include <tunables/global>
 
 /usr/bin/lftp {
-  #include <abstractions/apache2-common>
+  #include <abstractions/nameservice>
   #include <abstractions/base>
 
 
